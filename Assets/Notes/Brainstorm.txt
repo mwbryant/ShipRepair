@@ -45,11 +45,13 @@ Want to learn:
 
 Mechanics: (Ordered in best development order, i think...)
     Musts 
-        - Player movement
+        + Player movement
 
         - Alert System (UI)
         - Manual (UI)
         - Game progresses linearly, questish story system (or should it be random, scopey if random)
+
+        - Room Layout
 
         - Player toolbelt / Pockets
         - Player selected object/object in hand
