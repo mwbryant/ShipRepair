@@ -1,0 +1,84 @@
+
+Premise: 
+    Space Station 13 Engineer
+        - Tools to repair things (wrench, screwdriver, crowbar, wire cutters)
+            - Minigame for each or just click in correct order
+        - Multistep to fix each object
+        - Different objects
+            - Airlock
+            - Button
+            - Fire Alarm
+            - Conveyor belt
+                - Mining ship plot? (firefly style maybe)
+            - Clock (funny, trivial)
+            - Engine
+            - Security Camera (plot of someone breaking things)
+    Ship constantly breaking and getting more and more out of control
+        - Have to keep track of different screws
+        - Objects present error code and you check that in the manual
+            - Very minigame driven? or is that scopey
+        - Remembering whats on your belt or in your bag or in your pockets is part of the challenge/frustration (fun or not? check)
+
+Core Loop:
+    1. Alert something is broken (writing, voice acting, UI popup?)
+    2. Travel to that object/find it (maybe trival if only 1 screen game)
+    3. Open Manual to find how to fix (UI, pdf? probably UI because browser, no external download)
+        - What should this look like
+    4. Deconstruct -> Replace broken part -> Rebuild -> Test 
+        - Instructions only tell how to deconstruct, do backwards to build?
+        - Test sometimes fail and a different error code is presented
+    
+What is fun:
+    Opening the manual and refrencing it while deconstructing is the fun part
+        - Messing up a step should be entertaining... (Electrocute, Catch fire, Buzz)
+    Keeping track of your inventory and the screws is also part of the fun (maybe)
+    Hecticness of the ship and having multiple tasks pile up is fun
+    Humor in the writing and priorities of tasks helps the fun
+    Theres a high chance this isn't a fun concept... Welp thats what a jam is for I guess...
+    A lot of the fun comes from hecticness and chaos, embrace that
+        - The player should enjoy hunting for the lost screw or getting distracted
+        - Maybe add some mechanics to help facilitate distraction (scopey?)
+
+Want to learn:
+    Unity Particles 
+    Unity UI
+
+Mechanics: (Ordered in best development order, i think...)
+    Musts 
+        - Player movement
+
+        - Alert System (UI)
+        - Manual (UI)
+        - Game progresses linearly, questish story system (or should it be random, scopey if random)
+
+        - Player toolbelt / Pockets
+        - Player selected object/object in hand
+        - Player changing what is selected (Test controls extensively, not SS13) (Maybe dial of tools in each inventory)
+
+        - Player uses selected tool on object (Do good software design here, focus on the OOP)
+            - Click/Right click on objects (tighten/loosen?)?
+            - Interact with E?
+
+        - Diverse objects (Focus on object OOP, make it easy to add many objects, the number here is proportional to how much game there is)
+        
+        - Music
+        - Sound Effects
+
+        - Player art (Ask for art help)
+        - Object art 
+        - Tool art 
+
+        - Main Menu        
+    Mays
+        - Camera tracks player? (or static camera (easier))
+        - Equiment can be tested
+      * - Objects create particles if broken or working
+        - Pause 
+
+        - Ship art
+      * - UI art (Kenny is the backup/early build option)
+
+        - Distraction events
+
+
+
