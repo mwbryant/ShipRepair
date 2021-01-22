@@ -1,0 +1,77 @@
+Dialog Manager -> controls the UI dialog box
+Dialog -> Text to print on screen
+Event Manager -> Holds what event is happening, handles player interact events, Randomly creates dialog while event runs
+Event -> Contains dialog and the trigger to start the next events
+    - Create one of these for each event 
+    - Checks for current object to be fixed
+    - List of steps (How to code, enum of actions? player sends action and check if its correct or not?)
+        - Should each object keep its own steps and a state machine? I think this is better
+Objects -> Has a state and can handle steps preformed on it
+Game Manager -> Fires events periodicly
+    - Some random, some scripted
+        - Script after previous is fixed give some time
+Interaction Manager -> Check what the player clicks
+    - Working computer -> Open Manual
+        - Design Manual!!! How is that going to work....?  I don't know UI
+            - Text box popup, select what object to fix, List out steps and tools (tools in diff font color)
+    - File Cabinet -> Computer repair manual (maybe later have you pick from a list of files)
+    - Broken object/object -> Send tool interaction
+
+Event Types
+    - 1 of the 4 liquid pipes break 
+        - Cold loop is behind exhaust, harder to fix
+        - Steps: 
+            - Turn off water line (valve)
+            - Drain (into empty bucket - takes time, allows parallelizing) 
+            - Dry (using a rag) 
+            - Patch (using patch object)
+            - Turn on water line (valve)
+    - Gas exhaut breaks
+        - Steps:
+            - Turn off boiler (takes time)
+            - Remove pipe segement (Wrench)
+            - Replace new segement (place and wrench)
+            - Turn on boiler
+    - Boiler breaks 
+    - Fire Alarm breaks 
+        - Starts alarm noise
+        - Steps:
+            - Unscrew panel (screwdriver, keep up with screws)
+            - Use Wire cutters to fix
+            - Wait 60 seconds for system to reset
+            - Screw panel 
+    - Computer breaks 
+        - Manual in file cabinet
+        - Steps:
+            - Unscrew panel
+            - wire cutters
+            - Add new board
+            - wire cutters
+            - Wait 30 seconds for boot
+            - Add panel back
+    - Light shatters 
+        - Darkness? (Way Way out of scope, maybe no lights)
+        - Steps:
+            - Wire cutters
+            - Remove bulb
+            - Add new bulb
+            - Wire cutters
+    - Engine breaks
+        - Steps:
+            - Unscrew
+            - Crowbar
+            - Unscrew
+            - Remove/replace piston
+            - Screw
+            - Screw
+Script:
+  - Hot loop breaks
+  - Engine Breaks
+  - Gas exhaust breaks
+  - Computer Breaks
+Randoms after first story event done:
+  - Fire alarm
+  - Lights
+  - Water line breaks
+  - Clock?
+  - Radio?

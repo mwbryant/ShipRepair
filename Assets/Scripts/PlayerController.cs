@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public float speed;
 
+    //This is redundant because equipped == null is handsFree, whats the correct way to do this
+    public bool handsFree;
+    public Tool equipped; //Really the type here should be holdable or something
+
     private Rigidbody2D rb;
 
     void Start() {

@@ -54,6 +54,7 @@ Mechanics: (Ordered in best development order, i think...)
         - Alert System (UI)
         - Manual (UI)
         - Game progresses linearly, questish story system (or should it be random, scopey if random)
+            - Random might be easier? 
 
         - Room Layout
 
@@ -66,6 +67,9 @@ Mechanics: (Ordered in best development order, i think...)
             - Interact with E?
 
         - Diverse objects (Focus on object OOP, make it easy to add many objects, the number here is proportional to how much game there is)
+            - Its hard to have diversity on a one screen room
+            - Accept engine room only, or split into many rooms
+                - Default to accept engine room and avoid scope creep
         
         - Music
         - Sound Effects

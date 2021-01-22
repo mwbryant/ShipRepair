@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: WallMount
+    uniqueID: 2588131629
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tools
+    uniqueID: 740351805
     locked: 0
