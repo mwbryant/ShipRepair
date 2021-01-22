@@ -18,6 +18,10 @@ Premise:
         - Objects present error code and you check that in the manual
             - Very minigame driven? or is that scopey
         - Remembering whats on your belt or in your bag or in your pockets is part of the challenge/frustration (fun or not? check)
+        - Manual computer breaks down 
+        - Spare parts stored in a cabinet
+        - Fire alarm causes door to tool room to close
+            - How to get to backup tools?
 
 Core Loop:
     1. Alert something is broken (writing, voice acting, UI popup?)
