@@ -3,11 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tool : MonoBehaviour {
-    void Start() {
-        
-    }
-
-    void Update() {
-        
-    }
+    public Interaction[] interactionsPossible;
 }
