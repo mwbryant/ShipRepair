@@ -18,6 +18,7 @@ public class Engine : Object {
     public Sprite built;
     public Sprite broken;
     public Sprite panelLoose;
+    public Sprite panelLooseBroken;
     public Sprite panelOpen;
     public Sprite pistonUnscrewed;
     public Sprite panelOpenBroken;
@@ -37,7 +38,10 @@ public class Engine : Object {
                     renderer.sprite = built;
                 break;
             case EngineState.PanelLoose:
-                renderer.sprite = panelLoose;
+                if (pistonGood)
+                    renderer.sprite = panelLoose;
+                else
+                    renderer.sprite = panelLooseBroken;
                 break;
             case EngineState.PanelOpen:
                 if (pistonGood)
