@@ -63,6 +63,10 @@ public class Computer : Object {
                 break;
             case ComputerState.PanelOpen:
                 if (interaction == Interaction.AddComponent) {
+                    //take wires
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    InteractionManager im = player.GetComponent<InteractionManager>();
+                    im.ConsumeTool();
                     state = ComputerState.WiresCut;
                     timeToReboot = rebootTime;
                     return true;

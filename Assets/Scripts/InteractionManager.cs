@@ -22,13 +22,11 @@ public enum Interaction {
 }
 
 [System.Serializable]
-public struct InteractionAction
-{
+public struct InteractionAction {
     public Interaction action;
     public AudioClip soundFx;
 
-    public InteractionAction(Interaction action)
-    {
+    public InteractionAction(Interaction action) {
         this.action = action;
         this.soundFx = null;
     }
@@ -47,41 +45,31 @@ public class InteractionManager : MonoBehaviour {
 
     public AudioSource audioSource;
 
-    void Start()
-    {
+    void Start() {
         audioSource = GetComponent<AudioSource>();
     }
 
     //Tool needs to come from players equipped field, obj is from a click raycast
-    void UseTool(Object obj, Tool tool)
-    {
+    void UseTool(Object obj, Tool tool) {
         InteractionAction[] actions;
-        if (handsFree)
-        {
+        if (handsFree) {
             actions = handsInteractions;
-        }
-        else
-        {
+        } else {
             actions = tool.interactionsPossible;
         }
         foreach (InteractionAction interaction in actions) {
-            if (obj.Interact(interaction.action))
-            {
-                if (handsFree)
-                {
+            if (obj.Interact(interaction.action)) {
+                if (handsFree) {
                     Debug.Log("Hands worked");
-                }
-                else
-                {
+                } else {
                     Debug.Log("Tool worked");
                 }
 
-                if (interaction.soundFx != null)
-                {
+                if (interaction.soundFx != null) {
                     Debug.Log(interaction.soundFx);
                     audioSource.PlayOneShot(interaction.soundFx);
                 }
-                
+
                 return;
             }
         }
@@ -90,7 +78,7 @@ public class InteractionManager : MonoBehaviour {
     void FixedUpdate() {
         if (!handsFree) {
             equipped.transform.rotation = Quaternion.identity;
-            equipped.transform.position = transform.position;
+            equipped.transform.position = transform.position + new Vector3(-.2f, -.25f, 0);
         }
     }
 
@@ -141,7 +129,7 @@ public class InteractionManager : MonoBehaviour {
     }
 
     IEnumerator EnableAfterWait(Tool toenable) {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         toenable.GetComponent<BoxCollider2D>().enabled = true;
 
     }
