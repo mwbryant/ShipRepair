@@ -6,6 +6,7 @@ using UnityEngine.UI;
 //Singleton
 public class GameManager : MonoBehaviour {
     public Engine engine;
+    public Computer computer;
 
     public Text text;
     public Image box;
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour {
     public Dialog engineDialog;
     public Dialog computerTutorialDialog;
     public Dialog engineFixedDialog;
+    public Dialog computerDialog;
+    public Dialog winDialog;
 
     public bool hasUsedComputer = false;
     public float engineBreakTime = 5;
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour {
 
     private bool hasEngineBeenFixed = false;
     private bool engineEventStarted = false;
+    private bool computerEventStarted = false;
 
     void Start() {
         DialogManager.Instance.Setup(box, text);
@@ -47,9 +51,21 @@ public class GameManager : MonoBehaviour {
             DialogManager.Instance.AdvanceDialog();
         }
         if (!hasEngineBeenFixed && engineEventStarted) {
-            if (!engine.isBroken) {
+            if (!engine.isBroken && !computerEventStarted) {
                 DialogManager.Instance.AddDialog(engineFixedDialog);
+                StartCoroutine(BreakComputer(5));
             }
         }
+        if (computerEventStarted && !computer.isBroken) {
+            DialogManager.Instance.AddDialog(winDialog);
+        }
+    }
+
+    IEnumerator BreakComputer(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        Debug.Log("BREAKING");
+        DialogManager.Instance.AddDialog(computerDialog);
+        computer.isBroken = true;
+        computerEventStarted = true;
     }
 }

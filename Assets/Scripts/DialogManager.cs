@@ -58,7 +58,6 @@ public class DialogManager {
             toDisplay = currentDialog.NextSentence();
         }
         if (toDisplay == "") {
-            Debug.Log("Nothing to display");
             text.enabled = false;
             box.enabled = false;
         } else {

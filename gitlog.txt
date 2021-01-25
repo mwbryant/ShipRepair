@@ -1,0 +1,47 @@
+commit 822129b05b12ae75f0d040bc50c8a45aa92d327e
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Sun Jan 24 19:19:32 2021 -0700
+
+    Added computer rebuilt
+
+commit 435e20c0a513720cc79bd7bc382b7431c9dc918d
+Author: Adam Bryant <adam.w.bryant@outlook.com>
+Date:   Sun Jan 24 21:18:34 2021 -0500
+
+    Added sound effects to tool interactions
+
+commit e4beaf3de59dd2f90de618689dd57f5b92637cd4
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Sun Jan 24 18:16:31 2021 -0700
+
+    honestly a lot of things were added....
+
+commit 345d665609bcf291ac062032910235d10f0ed453
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Sat Jan 23 23:26:44 2021 -0700
+
+    Click to pickup tool, can use tool to change the state machine on an object
+
+commit df8bd1ea05157d888836de4e753c539379b34a14
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Fri Jan 22 14:46:03 2021 -0700
+
+    Planned out plot system and started work on dialog
+
+commit df1242ae8cbd4a1b490ab7f7451bdfafe03456b4
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Thu Jan 21 18:13:00 2021 -0700
+
+    Full room layout, rough design in place
+
+commit 56faac00d07953a0a253304e82c923b5cab10536
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Thu Jan 21 12:47:30 2021 -0700
+
+    Basic Player controller and room borders
+
+commit ca8365d996b30cce7a55f918318bc6dedbb73c47
+Author: mwbryant <logicprojectsforfpga@gmail.com>
+Date:   Thu Jan 21 12:25:56 2021 -0700
+
+    init commit

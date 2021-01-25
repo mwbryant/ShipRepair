@@ -16,8 +16,10 @@ public class Manual : MonoBehaviour {
     private float range;
     private bool onTOC;
     private bool thisManualOpen = false;
+    public bool manualEnabled = true;
 
     public void ShowManual(GameObject user, float range) {
+        if (!manualEnabled) return;
         manager.hasUsedComputer = true;
         currentUser = user;
         this.range = range;
@@ -76,6 +78,10 @@ public class Manual : MonoBehaviour {
     }
     void Update() {
         if (thisManualOpen == false) return;
+        if (!manualEnabled) {
+            HideManual();
+            return;
+        }
         if (Vector3.Distance(currentUser.transform.position, transform.position) > range) {
             Debug.Log("Manual out of range");
             HideManual();

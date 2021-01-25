@@ -13,7 +13,9 @@ public class Computer : Object {
     new private SpriteRenderer renderer;
     private bool rebooted;
 
-    public float rebootTime = 20f;
+    public Manual manual;
+
+    public float rebootTime = 5f;
     private float timeToReboot = 0;
     public Sprite working;
     public Sprite rebooting;
@@ -21,9 +23,11 @@ public class Computer : Object {
 
     public void Start() {
         renderer = GetComponent<SpriteRenderer>();
+
     }
 
     public void Update() {
+        manual.manualEnabled = !isBroken;
         switch (state) {
             case ComputerState.Built:
                 if (isBroken)
