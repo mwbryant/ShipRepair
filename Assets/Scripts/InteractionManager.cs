@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,38 +21,69 @@ public enum Interaction {
     PlacePiston,
 }
 
+[System.Serializable]
+public struct InteractionAction
+{
+    public Interaction action;
+    public AudioClip soundFx;
+
+    public InteractionAction(Interaction action)
+    {
+        this.action = action;
+        this.soundFx = null;
+    }
+
+}
+
 public class InteractionManager : MonoBehaviour {
     //This is redundant because equipped == null is handsFree, whats the correct way to do this
     private bool handsFree = true;
     private Tool equipped; //Really the type here should be holdable or something
 
-    public Interaction[] handsInteractions = { Interaction.RemovePiston, Interaction.ClosePanel };
+    public InteractionAction[] handsInteractions;
     public float reachDistance = 1f;
     public float useDistance = 1f;
     public float throwForce = 100f;
 
-    void Start() {
+    public AudioSource audioSource;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     //Tool needs to come from players equipped field, obj is from a click raycast
-    void UseTool(Object obj, Tool tool) {
-        if (handsFree) { //Or this is handfree
-            foreach (Interaction interaction in handsInteractions) {
-                if (obj.Interact(interaction)) {
+    void UseTool(Object obj, Tool tool)
+    {
+        InteractionAction[] actions;
+        if (handsFree)
+        {
+            actions = handsInteractions;
+        }
+        else
+        {
+            actions = tool.interactionsPossible;
+        }
+        foreach (InteractionAction interaction in actions) {
+            if (obj.Interact(interaction.action))
+            {
+                if (handsFree)
+                {
                     Debug.Log("Hands worked");
-                    return;
                 }
-            }
-            Debug.Log("Hands failed");
-        } else {
-            foreach (Interaction interaction in tool.interactionsPossible) {
-                if (obj.Interact(interaction)) {
+                else
+                {
                     Debug.Log("Tool worked");
-                    return;
                 }
+
+                if (interaction.soundFx != null)
+                {
+                    Debug.Log(interaction.soundFx);
+                    audioSource.PlayOneShot(interaction.soundFx);
+                }
+                
+                return;
             }
-            Debug.Log("Tool failed");
         }
     }
 

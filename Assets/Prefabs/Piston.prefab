@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9b1618158980738f684f7f642b529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionsPossible: 0c000000
+  interactionsPossible:
+  - action: 12
+    sound_fx: {fileID: 0}
 --- !u!61 &5355968748934762313
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tool : MonoBehaviour {
-    public Interaction[] interactionsPossible;
+    public InteractionAction[] interactionsPossible;
 }
