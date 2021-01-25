@@ -6,6 +6,7 @@ public class DialogTester : MonoBehaviour {
     public Dialog[] testingDialogs;
 
     void Start() {
+
         foreach (Dialog dialog in testingDialogs) {
             DialogManager.Instance.AddDialog(dialog);
         }

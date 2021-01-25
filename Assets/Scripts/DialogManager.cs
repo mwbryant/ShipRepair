@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Singleton
 public class DialogManager {
 
     private static DialogManager instance;
+    private Image box;
+    private Text text;
+
     public static DialogManager Instance {
         get {
             if (instance == null) {
@@ -13,6 +17,13 @@ public class DialogManager {
             }
             return instance;
         }
+    }
+
+    public void Setup(Image b, Text t) {
+        box = b;
+        text = t;
+        box.enabled = false;
+        text.enabled = false;
     }
 
     public bool isEmpty {
@@ -33,9 +44,14 @@ public class DialogManager {
     public void AddDialog(Dialog dialog, int delay = 0) {
         //TODO support delay
         dialogBacklog.Enqueue(dialog);
+        if (!text.enabled) {
+            AdvanceDialog();
+        }
     }
 
     public void AdvanceDialog() {
+        text.enabled = true;
+        box.enabled = true;
         string toDisplay = currentDialog.NextSentence();
         while (toDisplay == "" && dialogBacklog.Count != 0) { //This is really gross, program better
             currentDialog = dialogBacklog.Dequeue();
@@ -43,10 +59,11 @@ public class DialogManager {
         }
         if (toDisplay == "") {
             Debug.Log("Nothing to display");
-            dialogBoxVisible = false;
-            //TODO remove box ui
+            text.enabled = false;
+            box.enabled = false;
         } else {
             Debug.Log(toDisplay);
+            text.text = toDisplay;
         }
     }
 
